@@ -1,12 +1,14 @@
+import Lista from './components/Lista';
 import './App.css'
 import Contador from "./components/Contador";
-
+import Form from './components/Formulario';
 function App() {
 
   return (
     <>
       {/* Renderiza o componente responsável pela funcionalidade de contador. */}
       <Contador />
+      <Lista />
     </>
   )
 }

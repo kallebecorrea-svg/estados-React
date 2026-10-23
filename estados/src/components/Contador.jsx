@@ -17,7 +17,7 @@ export default function Contador() {
                 {/* Cada botão executa a ação correspondente no contador. */}
                 <button onClick={incrementar}>+</button>
                 <button onClick={decrementar}>-</button>
-                <button onClick={resetar}>reset</button>
+                <button onClick={resetar}>Reset</button>
             </div>
         </div>
     )
