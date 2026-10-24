@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import Form from "./Formulario";
 
 export default function Lista() {
     // Guarda a lista de usuários, que começa vazia.
@@ -6,6 +7,13 @@ export default function Lista() {
 
     // Controla qual conteúdo será exibido enquanto os dados não chegam.
     const [carregando, setCarregando] = useState(true);
+
+    function adicionarUsuario(novoUsuario) {
+        setUsuario((listaAtual) => [
+            ...listaAtual,
+            { ...novoUsuario, id: crypto.randomUUID() }
+        ]);
+    }
 
     useEffect(() => {
         // Simula uma consulta à API aguardando quatro segundos.
@@ -48,6 +56,7 @@ export default function Lista() {
 
     return (
         <div>
+            <Form aoAdicionar={adicionarUsuario} />
             <h1>Lista de Usuario</h1>
             {/* Mostra o carregamento ou a lista, conforme o estado atual. */}
             {carregando ? (
